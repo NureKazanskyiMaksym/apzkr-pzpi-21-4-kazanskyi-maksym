@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EquipmentWatcherMAUI.Pages.DeviceMembersPage"
+             Title="DeviceMembersPage"
+             HeightRequest="400">
+    <StackLayout>
+        <ListView x:Name="listView"
+                  ItemsSource="{Binding DeviceMembers}"
+                  SelectionMode="None"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid RowDefinitions="Auto, Auto"
+                              ColumnDefinitions="*,0.45*"
+                              Padding="8">
+                            <HorizontalStackLayout Spacing="8"
+                                                   Grid.Row="0"
+                                                   Grid.Column="0">
+                                <Label Text="{Binding FirstName}"
+                                        VerticalTextAlignment="Start"
+                                        FontSize="Medium"/>
+                                <Label Text="{Binding MiddleName}"
+                                        VerticalTextAlignment="Start"
+                                        FontSize="Medium"/>
+                                <Label Text="{Binding LastName}"
+                                        VerticalTextAlignment="Start"
+                                   FontSize="Medium"/>
+                            </HorizontalStackLayout>
+
+                            <Label Text="{Binding Email}"
+                                   Grid.Row="1" Grid.Column="0"
+                                   VerticalTextAlignment="Start"
+                                   TextColor="DarkGray"
+                                   FontSize="Medium"/>
+                            <Button Margin="4"
+                                    Text="Remove"
+                                    Grid.Row="0" Grid.Column="1"
+                                    Grid.RowSpan="2"
+                                    IsVisible="{Binding AccessDevice.AllowProvide}"
+                                    Command="{Binding 
+                                        Source={x:Reference listView},
+                                        Path=BindingContext.RemovePersonCommand}"
+                                    CommandParameter="{Binding}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

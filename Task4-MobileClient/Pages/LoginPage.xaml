@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EquipmentWatcherMAUI.Pages.LoginPage"
+             Title="Login">
+    <VerticalStackLayout
+        Margin="8">
+        <Label
+            Text="Login Please"
+            FontSize="Large"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+        <Label 
+            Text="Login"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start"/>
+        <Entry 
+            Placeholder="Username"
+            VerticalOptions="Center" 
+            HorizontalOptions="FillAndExpand"
+            x:Name="Login"/>
+        <Label
+            Text="Password"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start"/>
+        <Entry
+            Placeholder="Password"
+            VerticalOptions="Center" 
+            HorizontalOptions="FillAndExpand"
+            IsPassword="True"
+            x:Name="Password"/>
+        <Button
+            Text="Login"
+            VerticalOptions="Center" 
+            HorizontalOptions="FillAndExpand"
+            Clicked="OnLoginClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

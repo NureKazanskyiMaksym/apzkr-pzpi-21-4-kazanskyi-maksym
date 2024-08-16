@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EquipmentWatcherMAUI.Pages.GrantFormPage"
+             BackgroundColor="Transparent">
+    <ContentPage.Content>
+        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+            <Frame Padding="20" CornerRadius="10" BackgroundColor="{
+                AppThemeBinding Light={StaticResource Gray200},
+                Dark={StaticResource Gray950}}">
+                <VerticalStackLayout Margin="8" Spacing="16">
+                    <StackLayout>
+                        <Label
+                            Text="Pick expiration date"
+                            VerticalOptions="Start"
+                            HorizontalOptions="Start"/>
+                        <DatePicker
+                            x:Name="DatePicker"
+                            VerticalOptions="Start"
+                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label
+                            Text="Pick expiration time"
+                            VerticalOptions="Start"
+                            HorizontalOptions="Start"/>
+                        <TimePicker
+                            x:Name="TimePicker"
+                            VerticalOptions="Start"
+                            HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <HorizontalStackLayout>
+                        <Label
+                            Text="Can provide accesses"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"/>
+                        <CheckBox
+                            x:Name="IsProviderCheckBox"
+                            VerticalOptions="Start"
+                            HorizontalOptions="Start"/>
+                    </HorizontalStackLayout>
+                    <Button
+                        Text="Grant"
+                        VerticalOptions="End"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="OnGrantButtonClicked"/>
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

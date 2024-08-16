@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EquipmentWatcherMAUI"
+             x:Class="EquipmentWatcherMAUI.Pages.UserPage"
+             Title="UserPage">
+
+    <VerticalStackLayout
+        Margin="8">
+        <Label Text="Firstname:" FontSize="Small"/>
+        <Label
+            Margin="8,2,8,2"
+            x:Name="FirstNameLabel"
+            FontSize="Medium"
+            />
+        <Label Text="Middlename: " FontSize="Small"/>
+        <Label
+            Margin="8,2,8,2"
+            x:Name="MiddleNameLabel"
+            FontSize="Medium"/>
+        <Label Text="Lastname:" FontSize="Small"/>
+        <Label
+            Margin="8,2,8,2"
+            x:Name="LastNameLabel"
+            FontSize="Medium"/>
+        <Label Text="Email:" FontSize="Small"/>
+        <Label
+            Margin="8,2,8,2"
+            x:Name="UserEmailLabel"
+            FontSize="Medium"/>
+        <Button
+            Text="Logout"
+            VerticalOptions="Center"
+            HorizontalOptions="FillAndExpand"
+            Clicked="OnLogoutClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
