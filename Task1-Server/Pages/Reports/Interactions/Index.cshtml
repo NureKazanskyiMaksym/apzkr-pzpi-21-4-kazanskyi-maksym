@@ -1,0 +1,47 @@
+﻿@page
+@model EquipmentWatcher.Pages.Reports.Interactions.IndexModel
+@{
+    ViewData["Title"] = "Interaction Report";
+}
+
+<h2>Select Columns to Display</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <table class="table">
+        <tr>
+            <th class="fitwidth">Column</th>
+            <th class="center-text fitwidth">Display</th>
+            <th>Filter</th>
+        </tr>
+        <tr>
+            <td><label asp-for="Interaction.InteractionID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsInteractionID" class="control-label" checked /></td>
+            <td><input asp-for="Input.InteractionIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Interaction.AccessID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsAccessID" class="control-label" checked /></td>
+            <td><input asp-for="Input.AccessIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Interaction.Token" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsToken" class="control-label" checked /></td>
+            <td><input asp-for="Input.TokenFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Interaction.Timestamp" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsTimestamp" class="control-label" checked /></td>
+            <td style="display: flex; align-items: center;">
+                After: <input asp-for="Input.TimestampAfterFilter" class="form-control" style="margin: 0 10px 0 4px;" />
+                Before: <input asp-for="Input.TimestampBeforeFilter" class="form-control" style="margin: 0 0 0 4px;" />
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Interaction.Result" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsResult" class="control-label" checked /></td>
+            <td><input asp-for="Input.ResultFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Create Report</button>
+</form>

@@ -1,0 +1,57 @@
+﻿@page
+@model EquipmentWatcher.Pages.Models.Accesses.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Access</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Access.ProviderAccountID" class="control-label"></label>
+                <select asp-for="Access.ProviderAccountID" class ="form-control" asp-items="ViewBag.ProviderAccountID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Access.ReceiverAccountID" class="control-label"></label>
+                <select asp-for="Access.ReceiverAccountID" class ="form-control" asp-items="ViewBag.ReceiverAccountID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Access.AccessDeviceID" class="control-label"></label>
+                <select asp-for="Access.AccessDeviceID" class ="form-control" asp-items="ViewBag.AccessDeviceID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Access.CreatedAt" class="control-label"></label>
+                <input asp-for="Access.CreatedAt" class="form-control" />
+                <span asp-validation-for="Access.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Access.ExpiresOn" class="control-label"></label>
+                <input asp-for="Access.ExpiresOn" class="form-control" />
+                <span asp-validation-for="Access.ExpiresOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Access.AllowProvide" class="control-label"></label>
+                <input asp-for="Access.AllowProvide" class="control-label" />
+                <span asp-validation-for="Access.AllowProvide" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,40 @@
+﻿@page
+@model EquipmentWatcher.Pages.Reports.AccessDevices.IndexModel
+@{
+    ViewData["Title"] = "Access Device Report";
+}
+
+<h2>Select Columns to Display</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <table class="table">
+        <tr>
+            <th class="fitwidth">Column</th>
+            <th class="center-text fitwidth">Display</th>
+            <th>Filter</th>
+        </tr>
+        <tr>
+            <td><label asp-for="AccessDevice.AccessDeviceID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsAccessDeviceID" class="control-label" checked /></td>
+            <td><input asp-for="Input.AccessDeviceIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="AccessDevice.Name" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsName" class="control-label" checked /></td>
+            <td><input asp-for="Input.NameFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="AccessDevice.Description" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsDescription" class="control-label" checked /></td>
+            <td><input asp-for="Input.DescriptionFilter" class="form-control" placeholder="Filter"/></td>
+        </tr>
+        <tr>
+            <td><label asp-for="AccessDevice.MacAddress" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsMACAddress" class="control-label" checked /></td>
+            <td><input asp-for="Input.MACAddressFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Create Report</button>
+</form>
+            

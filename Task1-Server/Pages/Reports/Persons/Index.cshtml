@@ -1,0 +1,44 @@
+﻿@page
+@model EquipmentWatcher.Pages.Reports.Persons.IndexModel
+@{
+    ViewData["Title"] = "Person Report";
+}
+
+<h2>Select Columns to Display</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <table class="table">
+        <tr>
+            <th class="fitwidth">Column</th>
+            <th class="center-text fitwidth">Display</th>
+            <th>Filter</th>
+        </tr>
+        <tr>
+            <td><label asp-for="Person.PersonID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsPersonID" class="control-label" checked /></td>
+            <td><input asp-for="Input.PersonIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Person.FirstName" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsFirstName" class="control-label" checked /></td>
+            <td><input asp-for="Input.FirstNameFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Person.MiddleName" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsMiddleName" class="control-label" checked /></td>
+            <td><input asp-for="Input.MiddleNameFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Person.LastName" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsLastName" class="control-label" checked /></td>
+            <td><input asp-for="Input.LastNameFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Person.Email" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsEmail" class="control-label" checked /></td>
+            <td><input asp-for="Input.EmailFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Create Report</button>
+</form>
