@@ -1,0 +1,42 @@
+﻿@page
+@model EquipmentWatcher.Pages.Reports.AccessTokens.IndexModel
+@{
+    ViewData["Title"] = "Access Token Report";
+}
+
+<h2>Select Columns to Display</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <table class="table">
+        <tr>
+            <th class="fitwidth">Column</th>
+            <th class="center-text fitwidth">Display</th>
+            <th>Filter</th>
+        </tr>
+        <tr>
+            <td><label asp-for="AccessToken.AccessTokenID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsAccessTokenID" class="control-label" checked /></td>
+            <td><input asp-for="Input.AccessTokenIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="AccessToken.AccountID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsAccountID" class="control-label" checked /></td>
+            <td><input asp-for="Input.AccountIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="AccessToken.Token" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsToken" class="control-label" checked /></td>
+            <td><input asp-for="Input.TokenFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="AccessToken.ExpiresOn" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsExpiresOn" class="control-label" checked /></td>
+            <td style="display: flex; align-items: center;">
+                After: <input asp-for="Input.ExpiresOnAfterFilter" class="form-control" style="margin: 0 10px 0 4px;" />
+                Before: <input asp-for="Input.ExpiresOnBeforeFilter" class="form-control" style="margin: 0 0 0 4px;" />
+            </td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Create Report</button>
+</form>

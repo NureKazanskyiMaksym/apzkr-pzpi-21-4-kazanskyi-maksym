@@ -1,0 +1,54 @@
+﻿@page
+@model EquipmentWatcher.Pages.Reports.Accesses.IndexModel
+@{
+    ViewData["Title"] = "Access Report";
+}
+
+<h2>Select Columns to Display</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <table class="table">
+        <tr>
+            <th class="fitwidth">Column</th>
+            <th class="center-text fitwidth">Display</th>
+            <th>Filter</th>
+        </tr>
+        <tr>
+            <td><label asp-for="Access.AccessID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsAccessID" class="control-label" checked /></td>
+            <td><input asp-for="Input.AccessIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Access.ProviderAccountID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsProviderAccountID" class="control-label" checked /></td>
+            <td><input asp-for="Input.ProviderAccountIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Access.ReceiverAccountID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsReceiverAccountID" class="control-label" checked /></td>
+            <td><input asp-for="Input.ReceiverAccountIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Access.AccessDeviceID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsAccessDeviceID" class="control-label" checked /></td>
+            <td><input asp-for="Input.AccessDeviceIDFilter" class="form-control" placeholder="Filter" /></td>
+        <tr>
+            <td><label asp-for="Access.CreatedAt" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsCreatedAt" class="control-label" checked /></td>
+            <td style="display: flex; align-items: center;">
+                After: <input asp-for="Input.CreatedAtAfterFilter" class="form-control" style="margin: 0 10px 0 4px;" />
+                Before: <input asp-for="Input.CreatedAtBeforeFilter" class="form-control" style="margin: 0 0 0 4px;" />
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Access.ExpiresOn" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsExpiresOn" class="control-label" checked /></td>
+            <td style="display: flex; align-items: center;">
+                After: <input asp-for="Input.ExpiresOnAfterFilter" class="form-control" style="margin: 0 10px 0 4px;" />
+                Before: <input asp-for="Input.ExpiresOnBeforeFilter" class="form-control" style="margin: 0 0 0 4px;" />
+            </td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Create Report</button>
+</form>

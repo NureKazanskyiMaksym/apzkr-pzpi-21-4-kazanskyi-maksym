@@ -1,0 +1,47 @@
+﻿@page
+@model EquipmentWatcher.Pages.Reports.Accounts.IndexModel
+@{
+    ViewData["Title"] = "Account Report";
+}
+
+<h2>Select Columns to Display</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <table class="table">
+        <tr>
+            <th class="fitwidth">Column</th>
+            <th class="center-text fitwidth">Display</th>
+            <th>Filter</th>
+        </tr>
+        <tr>
+            <td><label asp-for="Account.AccountID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsAccountID" class="control-label" checked /></td>
+            <td><input asp-for="Input.AccountIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Account.PersonID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsPersonID" class="control-label" checked /></td>
+            <td><input asp-for="Input.PersonIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Account.Login" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsLogin" class="control-label" checked /></td>
+            <td><input asp-for="Input.LoginFilter" class="form-control" placeholder="Filter"/></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Account.Password" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsPassword" class="control-label" /></td>
+            <td><input asp-for="Input.PasswordFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Account.LastSession" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsLastSession" class="control-label" checked /></td>
+            <td style="display: flex; align-items: center;">
+                After: <input asp-for="Input.LastSessionAfterFilter" class="form-control" style="margin: 0 10px 0 4px;" />
+                Before: <input asp-for="Input.LastSessionBeforeFilter" class="form-control" style="margin: 0 0 0 4px;" />
+            </td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Create Report</button>
+</form>

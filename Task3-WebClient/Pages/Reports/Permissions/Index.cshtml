@@ -1,0 +1,34 @@
+﻿@page
+@model EquipmentWatcher.Pages.Reports.Permissions.IndexModel
+@{
+    ViewData["Title"] = "Permission Report";
+}
+
+<h2>Select Columns to Display</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <table class="table">
+        <tr>
+            <th class="fitwidth">Column</th>
+            <th class="center-text fitwidth">Display</th>
+            <th>Filter</th>
+        </tr>
+        <tr>
+            <td><label asp-for="Permission.PermissionID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsPermissionID" class="control-label" checked /></td>
+            <td><input asp-for="Input.PermissionIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Permission.AccountID" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsAccountID" class="control-label" checked /></td>
+            <td><input asp-for="Input.AccountIDFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Permission.Value" class="form-label"></label></td>
+            <td class="center-text"><input asp-for="Input.IsValue" class="control-label" checked /></td>
+            <td><input asp-for="Input.ValueFilter" class="form-control" placeholder="Filter" /></td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Create Report</button>
+</form>

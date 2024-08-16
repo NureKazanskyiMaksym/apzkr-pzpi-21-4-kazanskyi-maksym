@@ -1,0 +1,67 @@
+﻿@page
+@model EquipmentWatcher.Pages.Models.Accesses.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Access[0].CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Access[0].ExpiresOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Access[0].ProviderAccount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Access[0].ReceiverAccount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Access[0].AccessDevice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Access[0].AllowProvide)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Access) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpiresOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProviderAccount.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiverAccount.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccessDevice.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AllowProvide)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AccessID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AccessID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AccessID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

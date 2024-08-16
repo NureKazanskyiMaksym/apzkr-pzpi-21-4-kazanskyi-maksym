@@ -1,0 +1,55 @@
+﻿@page
+@model EquipmentWatcher.Pages.Models.Accounts.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].LastSession)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account[0].Person)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Account) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastSession)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.Email)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AccountID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AccountID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AccountID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
