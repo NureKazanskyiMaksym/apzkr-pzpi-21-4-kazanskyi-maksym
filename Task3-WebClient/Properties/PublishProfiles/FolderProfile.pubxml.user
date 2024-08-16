@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <History>True|2024-08-11T14:18:06.4100006Z||;True|2024-08-11T17:14:19.6693753+03:00||;False|2024-08-11T17:13:58.8735705+03:00||;True|2024-08-11T16:39:46.1631729+03:00||;False|2024-08-11T16:39:17.4310760+03:00||;</History>
+    <LastFailureDetails />
+    <_PublishTargetUrl>W:\source\repos\NURE\EquipmentWatcher\EquipmentWatcher\bin\Release\net8.0\publish\</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>
